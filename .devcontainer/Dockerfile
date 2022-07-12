@@ -2,7 +2,8 @@ FROM fedora:36
 
 WORKDIR /home
 
-RUN dnf update && \
+RUN dnf -y update && \
+  dnf -y install gcc gcc-g++ nano wget git && \
   dnf groupinstall -y "Development Tools" "Development Libraries"
 
 RUN useradd -m -G wheel ruby
