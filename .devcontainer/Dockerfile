@@ -2,7 +2,7 @@ FROM fedora:36
 
 WORKDIR /home
 
-RUN dnf -y update && \
+RUN dnf update && \
   sudo dnf groupinstall -y "Development Tools" "Development Libraries"
 
 RUN useradd -m -G wheel ruby
